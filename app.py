@@ -12,22 +12,18 @@ def index():
 
 @app.route('/salat')
 def salat():
-    city = request.args.get('city', 'Tangail').strip()
-    country = request.args.get('country', 'Bangladesh').strip()
-    day_a = request.args.get('date', '').strip()
+    city = request.args.get('city')
+    country = request.args.get('country')
+    day_a = request.args.get('date')
 
-    if not city:
+    if not bool(city.strip()):
         city = "Tangail"
-    if not country:
+    if not bool (country.strip()):
         country = "Bangladesh"
 
-    if not day_a:
-        day = datetime.now().strftime('%d-%m-%Y')
-    else:
-        try:
-            day = datetime.strptime(day_a, '%Y-%m-%d').strftime('%d-%m-%Y')
-        except ValueError:
-            return render_template('error.html', message="Invalid date format. Please use YYYY-MM-DD.")
+    
+    day = datetime.strptime(day_a, '%Y-%m-%d').strftime('%d-%m-%Y')
+        
 
     get_n = get_salat_timings(day, country, city)
     
