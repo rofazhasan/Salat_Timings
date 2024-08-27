@@ -34,7 +34,7 @@ def salat():
         'salat.html',
         city=city,
         country=country,
-        date=date,
+        date=day,
         fajr=get_n[0],
         dhuhr=get_n[1],
         asr=get_n[2],
