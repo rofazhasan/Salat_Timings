@@ -16,8 +16,7 @@ def get_salat_timings(day,country,city):
     for i in range(0,5):
       dat.append(reqD[sala[i]])
       dat[i] = datetime.strptime(dat[i], '%H:%M').strftime('%I:%M %p')
-      if i==4:
-       dat.append(request_a.json()["data"]["date"]["readable"])
+      
       i+=1
     return dat
   else:
