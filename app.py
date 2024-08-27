@@ -21,8 +21,10 @@ def salat():
     if not bool (country.strip()):
         country = "Bangladesh"
 
-    
-    day = datetime.strptime(day_a, '%Y-%m-%d').strftime('%d-%m-%Y')
+    if not bool(day_a.strip()):
+        day=datetime.now().strftime('%d-%m-%Y')
+    else:
+        day = datetime.strptime(day_a, '%Y-%m-%d').strftime('%d-%m-%Y')
         
 
     get_n = get_salat_timings(day, country, city)
