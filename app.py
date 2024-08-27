@@ -22,14 +22,25 @@ def salat():
     country = "Bangladesh"
   if not bool(day_a.strip()):
     day=datetime.now().strftime('%d-%m-%Y')
+    get_n=get_salat_timings(day,country,city)
+  	if  get_n==201:
+    	return render_template('not_found.html')
+
+  	return render_template('salat.html',city=city,country=country,date=get_n[5],
+                         fajr=get_n[0],
+                         dhuhr=get_n[1],
+                         asr=get_n[2],
+                         maghrib=get_n[3],
+                         isha=get_n[4]
+                         )
   else:
     day = datetime.strptime(day_a, '%Y-%m-%d').strftime('%d-%m-%Y')
 
-  get_n=get_salat_timings(day,country,city)
-  if  get_n==201:
-    return render_template('not_found.html')
+  	get_n=get_salat_timings(day,country,city)
+  	if  get_n==201:
+    	return render_template('not_found.html')
 
-  return render_template('salat.html',city=city,country=country,date=get_n[5],
+  	return render_template('salat.html',city=city,country=country,date=get_n[5],
                          fajr=get_n[0],
                          dhuhr=get_n[1],
                          asr=get_n[2],
