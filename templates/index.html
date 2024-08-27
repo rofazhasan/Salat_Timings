@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Salat_Timings in Your City</title>
+</head>
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}" />
+<body align="center">
+<h1>Check Your Salat Timings <hr/></h1>
+<form action="/salat">
+  <input type="date" name="date" id="date">
+  <input type="text" name="country" id="country" placeholder="Enter a Country"/>
+  <input type="text" name="city" id="city" placeholder="Enter A City"/><br>
+  <button type="submit">Submit</button>
+  <p align="center">Created by Rofaz</p>
+
+</form>
+</body>
+</html>

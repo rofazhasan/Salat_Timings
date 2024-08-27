@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Salat_Timings in {{ city }}</title>
+</head>
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/style1.css') }}" />
+<body align="center">
+    <div class="container">
+        <header>
+            <h1>Salat Timings</h1>
+            <h2>{{ date }},{{ city }},{{ country }}</h2>
+        </header>
+        <div class="timings">
+            <div class="prayer">
+                <h3>Fajr</h3>
+                <p>{{ fajr }}</p>
+            </div>
+            <div class="prayer">
+                <h3>Dhuhr</h3>
+                <p>{{ dhuhr }}</p>
+            </div>
+            <div class="prayer">
+                <h3>Asr</h3>
+                <p>{{ asr }}</p>
+            </div>
+            <div class="prayer">
+                <h3>Maghrib</h3>
+                <p>{{ maghrib }}</p>
+            </div>
+            <div class="prayer">
+                <h3>Isha</h3>
+                <p>{{ isha }}</p>
+            </div>
+        </div>
+        <footer>
+            <p>&copy;Created by Rofaz</p>
+        </footer>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Country or City is not found </title>
+</head>
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}" />
+<body align="center">
+<h1>Your Country or City is not Found</h1>
+<h2>Please Try Again<hr/></h2>
+<form action="/salat">
+  <input type="date" name="date" id="date">
+  <input type="text" name="country" id="country" placeholder="Enter a Country"/>
+  <input type="text" name="city" id="city" placeholder="Enter A City"/><br>
+  <button type="submit">Submit</button>
+  <p align="center">Created by Rofaz</p>
+
+</form>
+</body>
+</html>
+
